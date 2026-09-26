@@ -818,14 +818,16 @@ h3 {
 
 .authority-grid {
   display: grid;
-  grid-template-columns: minmax(330px, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(54px, 9vw, 120px);
+  gap: clamp(48px, 7vw, 96px);
 }
 
 .authority-image {
   position: relative;
-  max-width: 470px;
+  width: 100%;
+  max-width: 410px;
+  aspect-ratio: 1 / 1;
   margin-inline: auto;
   padding: 13px;
   border: 1px solid var(--border);
@@ -836,10 +838,10 @@ h3 {
 
 .authority-image img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   border-radius: 14px;
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: 50% 23%;
 }
 
 .authority-badge {
@@ -1259,9 +1261,13 @@ h3 {
 
   .logic-grid,
   .hours-grid,
-  .authority-grid,
   .offer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .authority-grid {
+    grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 54px);
   }
 
   .logic-caveat {
@@ -1280,7 +1286,7 @@ h3 {
   }
 
   .authority-image {
-    width: min(100%, 520px);
+    max-width: 360px;
   }
 
   .price-panel {
@@ -1458,6 +1464,22 @@ h3 {
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .authority-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .authority-image {
+    max-width: none;
+    aspect-ratio: 5 / 4;
+  }
+
+  .authority-image img {
+    object-position: 50% 25%;
   }
 }
 
