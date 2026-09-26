@@ -207,10 +207,33 @@ function HoursAndResult() {
 }
 
 function ContextSection() {
+  const orbitRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const orbit = orbitRef.current;
+
+    if (!orbit) return;
+
+    if (!("IntersectionObserver" in window)) {
+      orbit.dataset.active = "true";
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        orbit.dataset.active = entry.isIntersecting ? "true" : "false";
+      },
+      { rootMargin: "80px", threshold: 0.15 },
+    );
+
+    observer.observe(orbit);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section section-context" aria-labelledby="now-title">
       <div className="shell context-grid">
-        <div className="context-orbit" aria-hidden="true" data-reveal>
+        <div ref={orbitRef} className="context-orbit" aria-hidden="true" data-reveal>
           <span className="orbit orbit-one" />
           <span className="orbit orbit-two" />
           <span className="orbit-core">

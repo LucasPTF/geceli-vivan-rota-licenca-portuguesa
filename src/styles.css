@@ -704,35 +704,61 @@ h3 {
   inset: 0;
   border: 1px solid var(--border);
   border-radius: 50%;
+  animation-play-state: paused;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .orbit-one::before,
 .orbit-two::before {
   position: absolute;
   top: 50%;
-  left: 50%;
+  right: 0;
   width: 16px;
   height: 16px;
   border: 3px solid var(--paper);
   border-radius: 50%;
   background: var(--gold);
   content: "";
+  transform: translate(50%, -50%);
 }
 
 .orbit-one {
   inset: 9%;
-}
-
-.orbit-one::before {
-  transform: rotate(30deg) translateX(155px);
+  animation: orbit-clockwise 18s linear infinite;
 }
 
 .orbit-two {
   inset: 24%;
+  animation: orbit-counterclockwise 14s linear infinite;
 }
 
-.orbit-two::before {
-  transform: rotate(210deg) translateX(97px);
+.context-orbit .orbit {
+  animation-play-state: paused;
+}
+
+.context-orbit[data-active="true"] .orbit {
+  animation-play-state: running;
+}
+
+@keyframes orbit-clockwise {
+  from {
+    transform: rotate(30deg);
+  }
+
+  to {
+    transform: rotate(390deg);
+  }
+}
+
+@keyframes orbit-counterclockwise {
+  from {
+    transform: rotate(210deg);
+  }
+
+  to {
+    transform: rotate(-150deg);
+  }
 }
 
 .orbit-core {
@@ -1424,14 +1450,6 @@ h3 {
     max-width: 330px;
   }
 
-  .orbit-one::before {
-    transform: rotate(30deg) translateX(119px);
-  }
-
-  .orbit-two::before {
-    transform: rotate(210deg) translateX(74px);
-  }
-
   .authority-badge {
     right: 2px;
   }
@@ -1522,6 +1540,16 @@ h3 {
   .route-list::before {
     animation: none;
     transform: none;
+  }
+
+  .orbit-one {
+    animation: none !important;
+    transform: rotate(30deg);
+  }
+
+  .orbit-two {
+    animation: none !important;
+    transform: rotate(210deg);
   }
 
   .document-frame,
