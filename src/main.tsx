@@ -11,6 +11,7 @@ import {
   CircleCheckBig,
   ClipboardCheck,
   Compass,
+  Euro,
   ExternalLink,
   FileCheck2,
   Globe2,
@@ -55,9 +56,23 @@ function Hero({ hero }: { hero: HeroVariant }) {
 
       <div className="hero-grid shell">
         <div className="hero-copy">
-          <p className="eyebrow hero-enter hero-enter-1">{hero.kicker}</p>
+          <div className="hero-identification hero-enter hero-enter-1">
+            <span className="hero-profession">
+              <Stethoscope aria-hidden="true" size={16} />
+              {copy.audienceLabel}
+            </span>
+            <span className="hero-angle">{hero.kicker}</span>
+          </div>
           <h1 className="hero-enter hero-enter-2">{hero.title}</h1>
           <p className="hero-subtitle hero-enter hero-enter-3">{hero.subtitle}</p>
+
+          <div className="hero-euro-hook hero-enter hero-enter-3">
+            <Euro aria-hidden="true" size={24} />
+            <div>
+              <strong>{copy.euroHook}</strong>
+              <span>{copy.euroQualifier}</span>
+            </div>
+          </div>
 
           {hero.opening && (
             <p className="hero-opening hero-enter hero-enter-3">{hero.opening}</p>
@@ -81,8 +96,8 @@ function Hero({ hero }: { hero: HeroVariant }) {
         <div className="hero-visual hero-enter hero-enter-3" aria-label="Geceli Vivan">
           <div className="document-frame">
             <div className="document-topline">
-              <span>{copy.productName}</span>
-              <span>PT</span>
+              <span>Médico brasileiro</span>
+              <span>Portugal</span>
             </div>
             <div className="portrait-wrap">
               <img
@@ -333,9 +348,11 @@ function OfferSection() {
         </aside>
       </div>
 
+      <Countdown />
+
       <div className="shell lots" data-reveal aria-label="Lotes do workshop">
         {copy.lots.map((lot, index) => (
-          <article className={`lot-card ${index === 1 ? "lot-current" : ""}`} key={lot.name}>
+          <article className={`lot-card ${index === 0 ? "lot-current" : ""}`} key={lot.name}>
             <p>{lot.state}</p>
             <h3>{lot.name}</h3>
             <strong>{lot.value}</strong>
@@ -343,6 +360,74 @@ function OfferSection() {
         ))}
       </div>
     </section>
+  );
+}
+
+const countdownStorageKey = "geceli-rota-licenca-portuguesa-expiry-v1";
+const countdownDuration = 4 * 24 * 60 * 60 * 1000;
+
+function getCountdownExpiry() {
+  try {
+    const stored = window.localStorage.getItem(countdownStorageKey);
+    const parsed = stored ? Number(stored) : Number.NaN;
+
+    if (Number.isFinite(parsed)) return parsed;
+
+    const expiry = Date.now() + countdownDuration;
+    window.localStorage.setItem(countdownStorageKey, String(expiry));
+    return expiry;
+  } catch {
+    return Date.now() + countdownDuration;
+  }
+}
+
+function getRemainingTime(expiry: number) {
+  return Math.max(0, expiry - Date.now());
+}
+
+function Countdown() {
+  const [expiry] = React.useState(getCountdownExpiry);
+  const [remaining, setRemaining] = React.useState(() => getRemainingTime(expiry));
+
+  React.useEffect(() => {
+    const update = () => setRemaining(getRemainingTime(expiry));
+    const interval = window.setInterval(update, 1000);
+    update();
+
+    return () => window.clearInterval(interval);
+  }, [expiry]);
+
+  const totalSeconds = Math.floor(remaining / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  const units = [
+    { label: "dias", value: days },
+    { label: "horas", value: hours },
+    { label: "min", value: minutes },
+    { label: "seg", value: seconds },
+  ];
+
+  return (
+    <div className="countdown shell" data-reveal>
+      <div className="countdown-heading">
+        <p>{copy.countdownLabel}</p>
+        <span>{copy.countdownNote}</span>
+      </div>
+      <div
+        className="countdown-units"
+        role="timer"
+        aria-label={`${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`}
+      >
+        {units.map((unit) => (
+          <div className="countdown-unit" key={unit.label}>
+            <strong>{String(unit.value).padStart(2, "0")}</strong>
+            <span>{unit.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

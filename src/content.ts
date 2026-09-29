@@ -55,6 +55,10 @@ export const routeManifest: HeroVariant[] = [
 
 export const copy = {
   productName: "Rota da Licença Portuguesa",
+  audienceLabel: "PARA MÉDICOS BRASILEIROS",
+  euroHook: "Ganhe em euros morando no Brasil",
+  euroQualifier:
+    "Entenda primeiro a rota de reconhecimento, inscrição e enquadramento profissional necessária para avaliar essa possibilidade com responsabilidade.",
   descriptor:
     "Workshop ao vivo para médicos com carreira ativa no Brasil que querem entender uma segunda rota profissional ligada a Portugal, sem partir do pressuposto de mudar de país.",
   questionTitle: "Talvez a pergunta não seja “como ganhar em euro”",
@@ -125,6 +129,8 @@ export const copy = {
   investmentLabel: "INVESTIMENTO",
   investmentValue: "R$ 97",
   midCta: "QUERO PARTICIPAR DO WORKSHOP",
+  countdownLabel: "CONDIÇÃO ATUAL DISPONÍVEL POR",
+  countdownNote: "O prazo começou no seu primeiro acesso a esta página.",
   objectionsTitle: "Objeções que você provavelmente está tentando resolver",
   objections: [
     {
@@ -195,8 +201,8 @@ export const copy = {
     "Rota da Licença Portuguesa · 2 horas ao vivo · terça-feira às 20h · replay por 72 horas · R$ 97",
   finalCta: "QUERO MAPEAR MINHA ROTA",
   lots: [
-    { name: "Lote 1", value: "R$ 29,90", state: "Lote anterior" },
-    { name: "Lote 2", value: "R$ 97", state: "Lote vigente" },
-    { name: "Lote 3", value: "R$ 149,90", state: "Próximo lote" },
+    { name: "Lote 1", value: "R$ 97", state: "Lote vigente" },
+    { name: "Lote 2", value: "R$ 147", state: "Próximo lote" },
+    { name: "Lote 3", value: "R$ 197", state: "Lote final" },
   ],
 } as const;

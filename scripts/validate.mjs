@@ -22,8 +22,13 @@ for (const fragment of [
   "Abra uma segunda rota profissional",
   "Reconhecer não é fazer as malas",
   "Amplie a carreira, não a escala",
+  "PARA MÉDICOS BRASILEIROS",
+  "Ganhe em euros morando no Brasil",
+  "CONDIÇÃO ATUAL DISPONÍVEL POR",
   "A Rota da Licença Portuguesa em 4 marcos",
   "R$ 97 para o workshop ao vivo Rota da Licença Portuguesa, com replay por 72 horas.",
+  "R$ 147",
+  "R$ 197",
   "Regras acadêmicas, profissionais, fiscais e de telemedicina podem mudar.",
 ]) {
   requireText("Copy ausente", source, fragment);
@@ -39,6 +44,10 @@ if (!css.includes("prefers-reduced-motion")) {
 
 if (!app.includes('href="#investimento"')) {
   failures.push("Destino interno seguro dos CTAs ausente");
+}
+
+if (!app.includes("countdownStorageKey") || !app.includes("window.localStorage")) {
+  failures.push("Persistência do cronômetro ausente");
 }
 
 if (failures.length) {
