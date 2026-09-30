@@ -1,208 +1,332 @@
-export type HeroVariant = {
-  path: "/a1" | "/a2" | "/a3";
-  kicker: string;
-  title: string;
-  subtitle: string;
-  offer?: string;
-  opening?: string;
-  bridge?: string;
-  proof?: string;
-  cta: string;
-};
+export const copy = {
+  "productName": "GANHE EM EUROS MORANDO NO BRASIL",
+  "hero": {
+    "audienceLabel": "PARA MÉDICOS BRASILEIROS",
+    "kicker": "WORKSHOP AO VIVO PARA MÉDICOS",
+    "title": [
+      "GANHE EM EUROS",
+      "MORANDO NO BRASIL"
+    ],
+    "subtitle": "Oportunidades de crescimento profissional e maior remuneração.",
+    "intro": "Descubra como acessar oportunidades profissionais na Europa, atuar em euros e continuar morando no Brasil.",
+    "highlightTitle": "UMA CARREIRA. MAIS DE UM MERCADO.",
+    "highlightText": "Amplie suas possibilidades profissionais para a Europa sem precisar mudar sua vida para outro país.",
+    "information": "Workshop ao vivo · 2 horas · Replay por 72h",
+    "price": "R$ 97",
+    "cta": "QUERO DESCOBRIR COMO →"
+  },
+  "career": {
+    "kicker": "UMA CARREIRA QUE VOCÊ LEVOU ANOS PARA CONSTRUIR",
+    "title": "VOCÊ JÁ CONSTRUIU UMA CARREIRA NA MEDICINA",
+    "intro": "Agora descubra o que mais ela pode proporcionar a você.",
+    "milestones": [
+      "Foram anos de formação.",
+      "Especialização.",
+      "Experiência.",
+      "Atualização constante."
+    ],
+    "closing": [
+      "Você investiu muito para chegar até aqui.",
+      "Sua formação e sua experiência abrem oportunidades em outros países — inclusive oportunidades que permitem atuar na Europa, receber em euros e continuar morando no Brasil."
+    ]
+  },
+  "perspective": {
+    "kicker": "AMPLIE AS POSSIBILIDADES",
+    "title": "UMA CARREIRA. MAIS DE UM MERCADO.",
+    "paragraphs": [
+      "Você não precisa sair do Brasil para internacionalizar sua carreira médica.",
+      "Você pode morar no Brasil e acessar oportunidades profissionais na Europa, com remuneração em euros.",
+      "E isso muda o tamanho das suas possibilidades."
+    ],
+    "items": [
+      "Novos mercados.",
+      "Novas oportunidades.",
+      "Novas possibilidades de renda.",
+      "Mais domínio sobre o seu tempo.",
+      "Mais escolhas sobre como você quer trabalhar."
+    ]
+  },
+  "benefits": {
+    "title": "O QUE MUDA QUANDO SUA CARREIRA ACESSA OUTROS MERCADOS",
+    "cards": [
+      {
+        "title": "MAIOR REMUNERAÇÃO",
+        "text": "Acesse oportunidades profissionais em um mercado que remunera em euros."
+      },
+      {
+        "title": "MAIS VALOR PARA O SEU TEMPO",
+        "text": "Remuneração maior pelo seu trabalho muda a relação entre renda e horas trabalhadas."
+      },
+      {
+        "title": "NOVAS POSSIBILIDADES DE RENDA",
+        "text": "Sua formação passa a alcançar oportunidades além do mercado brasileiro."
+      },
+      {
+        "title": "MAIS ESCOLHAS",
+        "text": "Mais possibilidades profissionais significam mais liberdade para decidir como você quer trabalhar e viver."
+      }
+    ]
+  },
+  "value": {
+    "kicker": "MAIS VALORIZAÇÃO",
+    "title": "MAIS VALORIZAÇÃO PARA A CARREIRA QUE VOCÊ CONSTRUIU",
+    "paragraphs": [
+      "Seu tempo tem valor.",
+      "Sua experiência tem valor.",
+      "Sua formação tem valor.",
+      "Ao levar sua carreira para outros mercados, você acessa oportunidades onde esse valor pode se traduzir em uma remuneração maior pelo seu trabalho."
+    ],
+    "highlight": "Na prática, isso significa:",
+    "items": [
+      "Ganhar mais pelo seu tempo.",
+      "Receber em euros morando no Brasil.",
+      "Alcançar seus objetivos financeiros com menos horas de trabalho.",
+      "Ter mais liberdade para escolher como usar o seu tempo.",
+      "Ser mais valorizado por pacientes e colegas."
+    ],
+    "closing": [
+      "Você levou anos para construir sua carreira.",
+      "Agora ela pode trabalhar melhor para você."
+    ]
+  },
+  "time": {
+    "kicker": "MAIS VALOR PARA O SEU TEMPO",
+    "title": "QUANDO O SEU TRABALHO VALE MAIS, SUAS POSSIBILIDADES TAMBÉM AUMENTAM",
+    "intro": "Uma remuneração maior pelo seu trabalho amplia as escolhas que você pode fazer.",
+    "benefits": [
+      "Mais possibilidades de renda.",
+      "Mais domínio sobre a sua agenda.",
+      "Mais liberdade para decidir como você quer trabalhar."
+    ],
+    "choices": [
+      "Dedicar tempo a outros projetos.",
+      "Estar mais presente para a família.",
+      "Viajar.",
+      "Estudar.",
+      "Ou simplesmente escolher onde você quer colocar o seu tempo."
+    ],
+    "closing": "Mais valorização profissional também significa mais possibilidades de escolha."
+  },
+  "international": {
+    "kicker": "INTERNACIONALIZAÇÃO DA CARREIRA",
+    "title": "SUA CARREIRA NÃO PRECISA TER FRONTEIRAS",
+    "intro": "Internacionalizar sua carreira é fazer a Medicina que você já construiu alcançar novos lugares.",
+    "items": [
+      "É ter oportunidades no Brasil e no exterior.",
+      "É utilizar sua formação em diferentes mercados.",
+      "É acessar novas formas de atuação.",
+      "É receber em outras moedas."
+    ],
+    "closing": "É transformar uma carreira construída ao longo de anos em mais oportunidades, mais possibilidades de renda e mais escolhas."
+  },
+  "bridge": {
+    "title": "MAS COMO UM MÉDICO MORANDO NO BRASIL CONSEGUE RECEBER EM EUROS?",
+    "intro": "É isso que eu vou mostrar a você.",
+    "questions": [
+      "Como acessar oportunidades profissionais na Europa sem sair do Brasil?",
+      "Que atividades médicas você pode exercer?",
+      "O que é necessário?",
+      "Quais são os requisitos?",
+      "Quanto tempo leva?",
+      "Qual o investimento necessário?"
+    ],
+    "highlightIntro": "E, principalmente:",
+    "highlight": "POR ONDE COMEÇAR?"
+  },
+  "workshop": {
+    "kicker": "WORKSHOP AO VIVO",
+    "title": "EM 2 HORAS, VOCÊ VAI ENTENDER O CAMINHO.",
+    "intro": [
+      "Sem informação solta.",
+      "Sem precisar passar meses tentando descobrir sozinho como tudo funciona.",
+      "Eu vou organizar o caminho para você entender:"
+    ],
+    "items": [
+      "Onde estão as oportunidades.",
+      "Como acessá-las.",
+      "O que você precisa cumprir.",
+      "Quais são as etapas.",
+      "Quanto tempo leva.",
+      "Qual o investimento necessário.",
+      "Quais são as possibilidades de atuação.",
+      "E qual é o primeiro passo."
+    ],
+    "resultTitle": "AO FINAL DAS 2 HORAS",
+    "resultText": "Você terá uma visão clara do caminho e das decisões necessárias para transformar a internacionalização da sua carreira em um projeto profissional."
+  },
+  "audience": {
+    "forTitle": "ESTE WORKSHOP É PARA VOCÊ QUE QUER…",
+    "forItems": [
+      "Ganhar mais com a Medicina.",
+      "Receber em euros morando no Brasil.",
+      "Ter uma remuneração melhor pelo seu tempo de trabalho.",
+      "Ampliar suas oportunidades profissionais para outros países.",
+      "Usar sua formação médica também fora do Brasil.",
+      "Ter mais domínio sobre sua agenda.",
+      "Construir novas possibilidades de renda.",
+      "Ter mais escolhas para decidir como quer trabalhar — e viver."
+    ],
+    "notForTitle": "ESTE WORKSHOP NÃO É PARA QUEM…",
+    "notForItems": [
+      "Busca uma fórmula de dinheiro rápido.",
+      "Espera receber em euros sem construir o caminho profissional necessário.",
+      "Procura uma promessa de emprego ou renda garantida.",
+      "Não tem interesse em ampliar as possibilidades da própria carreira."
+    ]
+  },
+  "authority": {
+    "kicker": "QUEM VAI MOSTRAR ESSE CAMINHO",
+    "name": "GECELI VIVAN",
+    "specialty": "Especialista em internacionalização da carreira de profissionais da saúde.",
+    "experience": "Há mais de 10 anos trabalho com médicos e dentistas brasileiros que querem levar suas carreiras além das fronteiras do Brasil.",
+    "stats": [
+      "+10 ANOS DE EXPERIÊNCIA",
+      "+400 PROFISSIONAIS ORIENTADOS"
+    ],
+    "closing": "Neste workshop, vou mostrar a você como construir o caminho para acessar oportunidades profissionais na Europa, receber em euros e continuar morando no Brasil."
+  },
+  "discover": {
+    "title": "EM 2 HORAS, VOCÊ VAI DESCOBRIR",
+    "cards": [
+      {
+        "title": "ONDE ESTÃO AS OPORTUNIDADES",
+        "text": "Quais possibilidades profissionais existem para médicos brasileiros que querem ampliar sua atuação para a Europa."
+      },
+      {
+        "title": "COMO ACESSÁ-LAS",
+        "text": "Qual é o caminho necessário para transformar essas possibilidades em oportunidades profissionais reais."
+      },
+      {
+        "title": "O QUE É NECESSÁRIO",
+        "text": "Quais requisitos, etapas, prazos e investimentos fazem parte desse caminho."
+      },
+      {
+        "title": "POR ONDE COMEÇAR",
+        "text": "Qual é o primeiro passo para transformar a internacionalização da sua carreira em um projeto profissional."
+      }
+    ]
+  },
+  "offer": {
+    "kicker": "WORKSHOP AO VIVO",
+    "title": "GANHE EM EUROS MORANDO NO BRASIL",
+    "subtitle": "Oportunidades de crescimento profissional e maior remuneração.",
+    "intro": "Em 2 horas, entenda o caminho para acessar oportunidades profissionais na Europa e ampliar as possibilidades da carreira que você já construiu.",
+    "inclusions": [
+      "2 HORAS AO VIVO",
+      "REPLAY POR 72H"
+    ],
+    "investmentLabel": "INVESTIMENTO",
+    "investmentValue": "R$ 97",
+    "cta": "QUERO DESCOBRIR COMO →"
+  },
+  "faqTitle": "PERGUNTAS FREQUENTES",
+  "faq": [
+    {
+      "question": "É POSSÍVEL GANHAR EM EUROS MORANDO NO BRASIL?",
+      "answer": [
+        "Sim. Existem oportunidades profissionais ligadas ao mercado europeu que podem ser acessadas por médicos que continuam morando no Brasil.",
+        "No workshop, você vai entender como esse caminho funciona e o que precisa fazer para acessá-lo."
+      ]
+    },
+    {
+      "question": "PRECISO ME MUDAR PARA A EUROPA?",
+      "answer": [
+        "Não.",
+        "A mudança para a Europa não é condição para a possibilidade profissional que será apresentada no workshop."
+      ]
+    },
+    {
+      "question": "PRECISO ABANDONAR O QUE FAÇO HOJE?",
+      "answer": [
+        "Não.",
+        "Você está ampliando suas opções.",
+        "Com novas oportunidades disponíveis, você decide o que quer fazer com elas."
+      ]
+    },
+    {
+      "question": "PRECISO CONHECER O MERCADO EUROPEU?",
+      "answer": [
+        "Não.",
+        "No workshop, eu vou mostrar onde estão as oportunidades e explicar o caminho necessário para acessá-las."
+      ]
+    },
+    {
+      "question": "SERVE PARA GENERALISTAS E ESPECIALISTAS?",
+      "answer": [
+        "Sim.",
+        "O workshop é destinado a médicos em diferentes momentos da carreira."
+      ]
+    },
+    {
+      "question": "VOU SABER POR ONDE COMEÇAR?",
+      "answer": [
+        "Sim.",
+        "Você vai conhecer os requisitos, as etapas, o tempo, o investimento necessário e os primeiros passos."
+      ]
+    },
+    {
+      "question": "QUANTO TEMPO DURA?",
+      "answer": [
+        "2 horas ao vivo, com replay disponível por 72 horas."
+      ]
+    },
+    {
+      "question": "QUAL É O INVESTIMENTO?",
+      "answer": [
+        "R$ 97."
+      ]
+    }
+  ],
+  "final": {
+    "kicker": "UMA CARREIRA. MAIS DE UM MERCADO.",
+    "title": [
+      "VOCÊ JÁ FEZ O MAIS DIFÍCIL:",
+      "CONSTRUIU UMA CARREIRA NA MEDICINA."
+    ],
+    "intro": "Agora descubra o que mais ela pode proporcionar a você.",
+    "benefits": [
+      "Acesse oportunidades profissionais na Europa.",
+      "Receba em euros morando no Brasil.",
+      "Ganhe mais pelo seu tempo.",
+      "Amplie suas possibilidades de renda.",
+      "Tenha mais domínio sobre sua agenda.",
+      "Tenha mais escolhas."
+    ],
+    "promise": [
+      "GANHE EM EUROS",
+      "MORANDO NO BRASIL"
+    ],
+    "information": "Workshop ao vivo · 2 horas · Replay por 72h",
+    "price": "R$ 97",
+    "cta": "QUERO DESCOBRIR COMO →"
+  },
+  "countdownLabel": "CONDIÇÃO ATUAL DISPONÍVEL POR",
+  "countdownNote": "O prazo começou no seu primeiro acesso a esta página.",
+  "lots": [
+    {
+      "name": "Lote 1",
+      "value": "R$ 97",
+      "state": "Lote vigente"
+    },
+    {
+      "name": "Lote 2",
+      "value": "R$ 147",
+      "state": "Próximo lote"
+    },
+    {
+      "name": "Lote 3",
+      "value": "R$ 197",
+      "state": "Lote final"
+    }
+  ]
+} as const;
 
-export const appRoutes = ["/a1", "/a2", "/a3", "/obrigado"] as const;
+export type HeroVariant = typeof copy.hero & { path: "/a1" | "/a2" | "/a3" };
 
 export const routeManifest: HeroVariant[] = [
-  {
-    path: "/a1",
-    kicker: "WORKSHOP AO VIVO PARA MÉDICOS",
-    title: "Abra uma segunda rota profissional",
-    subtitle:
-      "Em 2 horas, entenda o caminho de reconhecimento do diploma, inscrição profissional e estruturação dos próximos passos para avaliar possibilidades de atuação ligadas a Portugal — inclusive modelos de telemedicina, quando o enquadramento do seu caso permitir.",
-    offer:
-      "Rota da Licença Portuguesa · 2 horas ao vivo · terça-feira às 20h · replay por 72 horas · R$ 97",
-    cta: "QUERO MAPEAR MINHA ROTA — R$ 97",
-  },
-  {
-    path: "/a2",
-    kicker: "INTERNACIONALIZAÇÃO NÃO É IMIGRAÇÃO",
-    title: "Reconhecer não é fazer as malas",
-    subtitle:
-      "Conheça a sequência que transforma um diploma brasileiro em uma rota profissional ligada a Portugal — reconhecimento, inscrição e estrutura de atuação — antes de decidir onde você quer morar.",
-    opening:
-      "O processo português costuma ser apresentado como mudança de país. Mas mudança é uma decisão de vida; habilitação é uma decisão de carreira. No workshop, você entende essa diferença e organiza o caminho com critérios reais.",
-    bridge:
-      "Primeiro habilitação, depois formato de atuação. Sem inverter a ordem.",
-    proof:
-      "Mais de 10 anos de atuação e mais de 400 processos conduzidos pela Em Portugal Consultoria.",
-    cta: "QUERO ENTENDER A ROTA — R$ 97",
-  },
-  {
-    path: "/a3",
-    kicker: "UMA ALTERNATIVA A MAIS PLANTÃO",
-    title: "Amplie a carreira, não a escala",
-    subtitle:
-      "Em 2 horas, entenda como avaliar Portugal como uma segunda rota profissional — sem promessa de renda fácil e sem partir da ideia de abandonar sua carreira no Brasil.",
-    opening:
-      "Quando a solução para ganhar mais é sempre vender mais horas, a carreira fica dependente da agenda. O workshop apresenta outra pergunta: existe uma habilitação internacional que faça sentido para o seu caso?",
-    bridge:
-      "A resposta começa por reconhecimento e inscrição profissional, não por plataforma de telemedicina.",
-    proof:
-      "Dados recentes mostram crescimento contínuo da oferta de formação médica no Brasil; a Em Portugal Consultoria atua há mais de uma década organizando rotas de reconhecimento.",
-    cta: "QUERO MAPEAR MINHA ROTA — R$ 97",
-  },
+  { path: "/a1", ...copy.hero },
+  { path: "/a2", ...copy.hero },
+  { path: "/a3", ...copy.hero },
 ];
 
-export const copy = {
-  productName: "Rota da Licença Portuguesa",
-  audienceLabel: "PARA MÉDICOS BRASILEIROS",
-  euroHook: "Ganhe em euros morando no Brasil",
-  euroQualifier:
-    "Entenda primeiro a rota de reconhecimento, inscrição e enquadramento profissional necessária para avaliar essa possibilidade com responsabilidade.",
-  descriptor:
-    "Workshop ao vivo para médicos com carreira ativa no Brasil que querem entender uma segunda rota profissional ligada a Portugal, sem partir do pressuposto de mudar de país.",
-  questionTitle: "Talvez a pergunta não seja “como ganhar em euro”",
-  questionParagraphs: [
-    "Talvez a pergunta seja outra: como criar uma alternativa de carreira sem transformar a solução em mais horas de plantão — e sem desmontar a vida que você já construiu no Brasil?",
-    "Essa é a proposta deste workshop. Não é uma promessa de renda. É um mapa técnico e estratégico para você entender o que precisa acontecer entre o diploma brasileiro e uma atuação profissional vinculada a Portugal.",
-    "Hoje, muitos médicos procuram renda complementar fora dos plantões, enquanto a própria telemedicina brasileira sofre pressão de oferta, concorrência e remuneração. Ao mesmo tempo, o processo português é burocrático o bastante para punir decisões tomadas fora de ordem. A oportunidade existe, mas o caminho precisa ser tratado como carreira — não como atalho.",
-  ],
-  logicTitle: "O erro é confundir internacionalização com mudança de país",
-  logicIntro:
-    "A rota começa muito antes de passagem, mudança ou contratação. Começa com habilitação, documentação, escolha correta das etapas e entendimento do modelo de atuação que faz sentido para o seu caso.",
-  logicKicker: "NOVA LÓGICA",
-  logicStatement:
-    "QUALIFICAÇÃO ANTES DE LOCALIZAÇÃO. Você primeiro entende como se tornar elegível e profissionalmente habilitado em Portugal. Depois avalia, com base nas regras vigentes, se a sua estratégia será presencial, remota ou combinada.",
-  logicCaveat:
-    "Telemedicina não elimina reconhecimento, inscrição profissional nem requisitos regulatórios. E uma habilitação portuguesa também não equivale, por si só, a autorização automática para exercer medicina em todos os países da União Europeia ou do Espaço Schengen.",
-  routeTitle: "A Rota da Licença Portuguesa em 4 marcos",
-  routeSteps: [
-    "Reconhecimento acadêmico — entender o processo de reconhecimento específico do diploma, a documentação e as decisões que mudam prazo, esforço e custo.",
-    "Inscrição profissional — compreender o que vem depois do reconhecimento e quais requisitos antecedem o exercício da medicina em Portugal.",
-    "Estrutura de atuação — visualizar o papel do enquadramento fiscal e operacional, do NIF e das regras aplicáveis a modelos presenciais, remotos ou mistos.",
-    "Próxima ação — sair com uma rota organizada para o seu cenário, sabendo o que pesquisar, preparar e decidir primeiro.",
-  ],
-  twoHoursTitle: "O que acontece nas 2 horas",
-  twoHoursItems: [
-    "O mapa completo do reconhecimento do diploma médico brasileiro em Portugal — sem reduzir o processo a uma lista genérica de documentos.",
-    "Como a inscrição na Ordem dos Médicos entra na sequência e por que reconhecimento acadêmico e habilitação profissional não são a mesma coisa.",
-    "Onde a telemedicina pode entrar na estratégia e por que atendimento remoto continua sujeito a regras profissionais e regulatórias.",
-    "Quais categorias de custos, documentos, traduções, deslocamentos e etapas precisam entrar no planejamento antes de começar.",
-    "Como separar reconhecimento do diploma de reconhecimento da especialidade, quando esse segundo processo for relevante.",
-    "Como transformar tudo isso em um próximo passo objetivo para o seu caso, em vez de continuar acumulando informações soltas.",
-  ],
-  resultTitle: "O resultado imediato do workshop",
-  resultText:
-    "Ao final, você não recebe a promessa de que “vai dar certo”. Você recebe algo mais útil para decidir: clareza sobre a sequência, os pontos de atenção, as perguntas que precisam ser respondidas no seu caso e a primeira ação necessária para avançar com critério.",
-  nowTitle: "Por que essa conversa importa agora",
-  nowText:
-    "O mercado médico brasileiro continua crescendo. Levantamento da Faculdade de Medicina da USP publicado em outubro de 2025 registrou 50.974 vagas anuais de graduação em Medicina e projetou que o país pode superar 1,2 milhão de médicos até 2030. Isso não significa que “não haverá trabalho”. Significa que depender de uma única rota profissional merece ser uma escolha consciente — não um padrão automático.",
-  nowSource:
-    "Fonte pública para o dado de mercado: Faculdade de Medicina da USP, 06/10/2025 — levantamento “Brasil ultrapassa 50 mil vagas anuais em Medicina…”.",
-  forTitle: "Para quem é",
-  forItems: [
-    "Médicos com carreira ativa no Brasil que querem avaliar uma segunda frente profissional com critérios reais.",
-    "Quem considera Portugal, mas não quer partir da premissa de emigrar.",
-    "Quem prefere entender processo, custo, ordem e risco antes de começar a protocolar documentos.",
-    "Generalistas ou especialistas que precisam distinguir o reconhecimento do diploma das exigências adicionais de cada cenário profissional.",
-  ],
-  notForTitle: "Para quem não é",
-  notForItems: [
-    "Quem procura promessa de renda rápida, vaga garantida ou aprovação garantida.",
-    "Quem espera que telemedicina dispense reconhecimento, inscrição profissional ou requisitos do país em que a atividade estiver enquadrada.",
-    "Quem quer uma autorização automática para exercer medicina em toda a Europa a partir de uma única licença.",
-    "Quem não pretende dedicar tempo à documentação, às avaliações e às decisões técnicas do processo.",
-  ],
-  authorityTitle: "Quem conduz",
-  authorityText:
-    "Geceli Vivan é especialista em internacionalização da carreira médica e lidera a Em Portugal Consultoria. A empresa informa mais de 10 anos de atuação e mais de 400 processos conduzidos em reconhecimento e internacionalização de carreiras, com acompanhamento desde a análise inicial até etapas de reconhecimento e inscrição profissional.",
-  authoritySource:
-    "Fonte de autoridade: site oficial Em Portugal Consultoria, consultado em 24/09/2026.",
-  receiveTitle: "O que você recebe",
-  receiveItems: [
-    "2 horas de workshop ao vivo com foco na rota de Portugal.",
-    "Mapa das etapas: reconhecimento acadêmico, inscrição profissional, estrutura de atuação e próximos passos.",
-    "Visão prática das categorias de custo, documentação e decisões que costumam travar o processo.",
-    "Orientação sobre onde a telemedicina entra — e quais condições precisam existir antes de tratá-la como opção real.",
-    "Replay disponível por 72 horas.",
-  ],
-  investmentLabel: "INVESTIMENTO",
-  investmentValue: "R$ 97",
-  midCta: "QUERO PARTICIPAR DO WORKSHOP",
-  countdownLabel: "CONDIÇÃO ATUAL DISPONÍVEL POR",
-  countdownNote: "O prazo começou no seu primeiro acesso a esta página.",
-  objectionsTitle: "Objeções que você provavelmente está tentando resolver",
-  objections: [
-    {
-      question: "“NÃO SEI SE O MEU CASO SERVE.”",
-      answer:
-        "O workshop foi desenhado para você entender quais informações do seu histórico acadêmico e profissional realmente mudam a rota. A resposta final depende do seu caso, mas você sai sabendo quais critérios verificar antes de investir energia no processo.",
-    },
-    {
-      question: "“NÃO QUERO MORAR EM PORTUGAL AGORA.”",
-      answer:
-        "Internacionalizar a carreira não precisa começar por mudança de país. O workshop separa habilitação profissional de decisão de residência e mostra onde modelos remotos ou híbridos podem entrar, sempre condicionados às regras vigentes.",
-    },
-    {
-      question: "“POSSO RESOLVER TUDO SOZINHO.”",
-      answer:
-        "É possível pesquisar e executar etapas por conta própria. O valor do workshop está em organizar ordem, dependências e riscos para reduzir tentativa e erro — especialmente em um processo que envolve universidade, Ordem dos Médicos e regras profissionais.",
-    },
-    {
-      question: "“TELEMEDICINA PARECE UM ATALHO.”",
-      answer:
-        "Não é. Atendimento remoto continua sendo exercício profissional e exige enquadramento adequado. A proposta é justamente mostrar o que precisa existir antes de tratar telemedicina como uma opção.",
-    },
-  ],
-  faqTitle: "Perguntas frequentes",
-  faq: [
-    {
-      question: "PRECISO MORAR EM PORTUGAL PARA FAZER O WORKSHOP?",
-      answer:
-        "Não. O workshop é voltado justamente a médicos que estão no Brasil e querem entender a rota antes de decidir onde irão viver ou trabalhar.",
-    },
-    {
-      question: "O WORKSHOP GARANTE RECONHECIMENTO DO DIPLOMA OU INSCRIÇÃO NA ORDEM?",
-      answer:
-        "Não. Essas decisões dependem de instituições competentes, documentação, avaliações e requisitos aplicáveis ao caso. O workshop organiza o caminho e os pontos de decisão; não substitui a análise oficial nem garante aprovação.",
-    },
-    {
-      question: "POSSO ATENDER PORTUGAL POR TELEMEDICINA MORANDO NO BRASIL?",
-      answer:
-        "Pode existir uma estrutura de atuação remota, mas ela não é automática. É necessário analisar habilitação profissional, estabelecimento do prestador, regras portuguesas e demais requisitos aplicáveis ao modelo. O workshop apresenta essa possibilidade dentro desses limites.",
-    },
-    {
-      question: "A LICENÇA PORTUGUESA VALE AUTOMATICAMENTE PARA 31 PAÍSES?",
-      answer:
-        "Não. União Europeia e Espaço Schengen não funcionam como uma licença médica única e automática. O reconhecimento em Portugal pode ampliar possibilidades de mobilidade, mas cada forma de atuação e cada jurisdição pode exigir regras adicionais.",
-    },
-    {
-      question: "RECONHECER O DIPLOMA TAMBÉM RECONHECE MINHA ESPECIALIDADE?",
-      answer:
-        "Não necessariamente. Reconhecimento do diploma e reconhecimento da especialidade são processos distintos. O workshop mostra onde essa diferença impacta o planejamento.",
-    },
-    {
-      question: "QUAL É O INVESTIMENTO?",
-      answer:
-        "R$ 97 para o workshop ao vivo Rota da Licença Portuguesa, com replay por 72 horas.",
-    },
-    {
-      question: "HÁ GARANTIA DE RENDA, VAGA, PACIENTES OU RESULTADO FINANCEIRO?",
-      answer:
-        "Não. O workshop não promete contratação, volume de pacientes, remuneração ou resultado financeiro. Ele ensina a rota e os critérios para avaliar a estratégia.",
-    },
-  ],
-  importantLabel: "IMPORTANTE",
-  importantText:
-    "Regras acadêmicas, profissionais, fiscais e de telemedicina podem mudar. A atuação depende do caso concreto e das normas vigentes. O workshop é educacional e não constitui garantia de reconhecimento, inscrição, contratação, pacientes ou renda.",
-  finalText:
-    "Você não precisa decidir hoje se vai mudar de país. Precisa decidir se quer continuar tratando Portugal como uma ideia distante ou transformar essa possibilidade em uma rota que você consegue avaliar com clareza.",
-  finalOffer:
-    "Rota da Licença Portuguesa · 2 horas ao vivo · terça-feira às 20h · replay por 72 horas · R$ 97",
-  finalCta: "QUERO MAPEAR MINHA ROTA",
-  lots: [
-    { name: "Lote 1", value: "R$ 97", state: "Lote vigente" },
-    { name: "Lote 2", value: "R$ 147", state: "Próximo lote" },
-    { name: "Lote 3", value: "R$ 197", state: "Lote final" },
-  ],
-} as const;
+export const appRoutes = ["/a1", "/a2", "/a3", "/obrigado"] as const;

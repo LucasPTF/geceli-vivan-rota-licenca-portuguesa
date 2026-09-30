@@ -6,53 +6,24 @@ const source = fs.readFileSync(path.join(root, "src", "content.ts"), "utf8");
 const app = fs.readFileSync(path.join(root, "src", "main.tsx"), "utf8");
 const css = fs.readFileSync(path.join(root, "src", "styles.css"), "utf8");
 const vercel = JSON.parse(fs.readFileSync(path.join(root, "vercel.json"), "utf8"));
-
+const manifest = JSON.parse(fs.readFileSync(path.join(root, "copy-audit.json"), "utf8"));
 const failures = [];
-const requireText = (label, haystack, needle) => {
-  if (!haystack.includes(needle)) failures.push(`${label}: ${needle}`);
-};
 
-for (const route of ["/a1", "/a2", "/a3", "/obrigado"]) {
-  if (!vercel.rewrites.some((entry) => entry.source === route)) {
-    failures.push(`Rota ausente: ${route}`);
-  }
+for (const route of manifest.routes) {
+  if (!vercel.rewrites.some((entry) => entry.source === route)) failures.push(`Rota ausente: ${route}`);
 }
-
-for (const fragment of [
-  "Abra uma segunda rota profissional",
-  "Reconhecer não é fazer as malas",
-  "Amplie a carreira, não a escala",
-  "PARA MÉDICOS BRASILEIROS",
-  "Ganhe em euros morando no Brasil",
-  "CONDIÇÃO ATUAL DISPONÍVEL POR",
-  "A Rota da Licença Portuguesa em 4 marcos",
-  "R$ 97 para o workshop ao vivo Rota da Licença Portuguesa, com replay por 72 horas.",
-  "R$ 147",
-  "R$ 197",
-  "Regras acadêmicas, profissionais, fiscais e de telemedicina podem mudar.",
-]) {
-  requireText("Copy ausente", source, fragment);
+for (const fragment of manifest.requiredText) {
+  if (!source.includes(fragment)) failures.push(`Copy ausente: ${fragment}`);
 }
-
-if (/transition\s*:\s*all/i.test(css)) {
-  failures.push("CSS usa transition: all");
+if (/reconhecimento|inscrição profissional|telemedicina|Ordem dos Médicos|\bNIF\b/i.test(source)) {
+  failures.push("Conteúdo de etapas técnicas na copy");
 }
-
-if (!css.includes("prefers-reduced-motion")) {
-  failures.push("Variante de movimento reduzido ausente");
-}
-
-if (!app.includes('href="#investimento"')) {
-  failures.push("Destino interno seguro dos CTAs ausente");
-}
-
-if (!app.includes("countdownStorageKey") || !app.includes("window.localStorage")) {
-  failures.push("Persistência do cronômetro ausente");
-}
-
+if (/transition\s*:\s*all/i.test(css)) failures.push("CSS usa transition: all");
+if (!css.includes("prefers-reduced-motion")) failures.push("Movimento reduzido ausente");
+if (!app.includes('href="#investimento"')) failures.push("Destino interno dos CTAs ausente");
+if (!app.includes("countdownStorageKey") || !app.includes("window.localStorage")) failures.push("Persistência do cronômetro ausente");
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
-
-console.log("Validação estrutural concluída para /a1, /a2, /a3 e /obrigado.");
+console.log(`Copy completa validada: ${manifest.requiredText.length} trechos e ${manifest.routes.length} rotas.`);

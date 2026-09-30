@@ -1,34 +1,34 @@
-# Rota da Licença Portuguesa
+# Ganhe em euros morando no Brasil
 
 ## Direção
 
-Sistema editorial inspirado em um dossiê de habilitação profissional, não em turismo ou imigração. A narrativa visual acompanha uma rota objetiva de quatro marcos: reconhecimento acadêmico, inscrição profissional, estrutura de atuação e próxima ação.
+Sistema editorial para médicos brasileiros, com foco em valorização profissional, remuneração em euros e possibilidades de atuação em outros mercados. A promessa principal recebe destaque na abertura, na oferta e no fechamento. A explicação do método pertence ao workshop.
 
 ## Paleta
 
 | Papel | Valor |
 | --- | --- |
-| Ink | `#10272A` |
-| Atlantic | `#0D4E4C` |
-| Atlantic deep | `#073634` |
-| Portugal green | `#0B6B48` |
-| Gold | `#C9A45E` |
-| Gold dark | `#8A672E` |
-| Paper | `#F7F2E8` |
-| Paper warm | `#EFE7D8` |
-| White | `#FFFEFA` |
-| Muted ink | `#526361` |
-| Border | `#D8CDBB` |
-| Focus | `#1B7D78` |
+| Ink | `#011A3A` |
+| Atlantic | `#0D526F` |
+| Atlantic deep | `#000A23` |
+| Brand blue | `#004D6D` |
+| Gold | `#C59D5F` |
+| Gold dark | `#8C6939` |
+| Paper | `#F8F8F8` |
+| Paper warm | `#EBE9E5` |
+| White | `#FFFFFF` |
+| Muted ink | `#4F5E70` |
+| Border | `#D9D6CE` |
+| Focus | `#0061E2` |
 
-O dourado é um detalhe documental, nunca a cor de grandes superfícies ou texto corrido. O verde profundo sustenta contraste e autoridade. O papel quente evita o visual clínico genérico.
+O azul profundo sustenta contraste e autoridade. O dourado destaca a promessa, os preços e os CTAs. A paleta segue a identidade oficial da Em Portugal Consultoria.
 
 ## Tipografia
 
 - Títulos: `Fraunces`, com fallback para Georgia e serif.
 - Corpo e interface: `Manrope`, com fallback para Arial e sans-serif.
-- Hero entre 42 e 72 px conforme a largura e o comprimento do título.
-- Títulos de seção entre 34 e 58 px.
+- Hero entre 29 e 64 px conforme a largura e o comprimento do título.
+- Títulos de seção entre 30 e 48 px.
 - Corpo entre 16 e 19 px, linha entre 1.55 e 1.75.
 - Valores e números usam algarismos tabulares.
 
@@ -38,7 +38,7 @@ O dourado é um detalhe documental, nunca a cor de grandes superfícies ou texto
 - Leitura longa: 680 px.
 - Ritmo de seção: 88 a 136 px no desktop, 68 a 92 px no mobile.
 - Cantos: 18 px em superfícies, 999 px em chips e CTAs.
-- Bordas finas, linhas de rota, selos circulares e blocos que lembram fichas de um dossiê.
+- Bordas finas, selos circulares e cards de benefícios.
 - Profundidade suave, sem glassmorphism.
 
 ## Imagens
@@ -50,7 +50,7 @@ O dourado é um detalhe documental, nunca a cor de grandes superfícies ou texto
 ## Composição
 
 - Hero assimétrico: copy à esquerda e retrato integrado a um painel documental à direita.
-- A rota de quatro marcos é o artefato central da página e o único efeito visual marcante.
+- As órbitas representam a ampliação dos mercados ao redor da carreira médica e permanecem como único efeito contínuo.
 - Seções alternam fundo claro, faixa profunda, composição editorial em duas colunas e cards conectados.
 - Textos densos ficam em coluna de leitura; listas ganham numeração ou ícones lineares sem reescrita.
 
@@ -58,8 +58,8 @@ O dourado é um detalhe documental, nunca a cor de grandes superfícies ou texto
 
 - Propósitos: hierarquia, explicação, continuidade e feedback.
 - Entrada da hero com opacidade e deslocamento curto em 600 ms usando `cubic-bezier(0.23, 1, 0.32, 1)`.
-- Revelações de seção com clip-path em 600 ms usando `cubic-bezier(0.77, 0, 0.175, 1)`, disparadas uma vez.
-- Linha da rota cresce por `transform: scaleX()` ou `scaleY()`, sem alterar layout.
+- Entrada de seções com opacidade e deslocamento curto em 600 ms usando `cubic-bezier(0.77, 0, 0.175, 1)`.
+- Órbitas com rotação linear, pausadas fora da tela.
 - Botões respondem ao pressionar em 160 ms.
 - Hovers somente em ponteiros finos.
 - Em `prefers-reduced-motion`, remover deslocamentos, traçado progressivo e movimentos contínuos; manter apenas fades curtos quando úteis.
@@ -76,6 +76,6 @@ O dourado é um detalhe documental, nunca a cor de grandes superfícies ou texto
 
 - Um CTA primário por momento, com rótulo literal da copy.
 - Enquanto o checkout não existir, CTAs apontam para a seção de investimento da própria página.
-- Não mostrar cronômetro sem data oficial.
+- Uma única instância de cronômetro junto aos lotes. Sem prazo oficial, preservar o vencimento de quatro dias por visitante no armazenamento do projeto.
 - Mostrar comparação transparente de três lotes conforme as regras do projeto.
 - Não introduzir depoimentos, promessas ou fatos que não estejam na copy final.
