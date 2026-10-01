@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowRight, Camera, Check, ChevronDown, CircleCheckBig, ClipboardCheck,
-  Clock3, Compass, Euro, ExternalLink, Globe2, MessageCircle, ShieldCheck, Stethoscope, X,
+  Clock3, Compass, Euro, Globe2, Mail, MessageCircle, ShieldCheck, Stethoscope, X,
 } from "lucide-react";
 import { copy, routeManifest, type HeroVariant } from "./content";
 import "./styles.css";
@@ -478,12 +478,10 @@ function Footer() {
             <Camera aria-hidden="true" size={20} /><span>@emportugalconsultoria</span>
           </a>
           <a
-            href="https://emportugalconsultoria.com.br/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Site da Em Portugal Consultoria"
+            href="mailto:contato@emportugalconsultoria.com.br"
+            aria-label="E-mail da Em Portugal Consultoria"
           >
-            <ExternalLink aria-hidden="true" size={20} /><span>emportugalconsultoria.com.br</span>
+            <Mail aria-hidden="true" size={20} /><span>contato@emportugalconsultoria.com.br</span>
           </a>
         </div>
       </div>

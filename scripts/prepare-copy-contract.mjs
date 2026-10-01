@@ -43,8 +43,8 @@ add(copy.faqTitle);
 copy.faq.forEach(item => add(item.question, item.answer));
 const f = copy.final;
 add(f.kicker, f.title, f.intro, f.benefits, f.promise, f.information, f.price, f.cta);
-add("Contato", "WhatsApp: +351 964 052 921", "@emportugalconsultoria", "emportugalconsultoria.com.br");
-const authorizedInterface = new Set(["Ir para o conteúdo", "10+", "dias", "horas", "min", "seg", "Contato", "WhatsApp: +351 964 052 921", "@emportugalconsultoria", "emportugalconsultoria.com.br"]);
+add("Contato", "WhatsApp: +351 964 052 921", "@emportugalconsultoria", "contato@emportugalconsultoria.com.br");
+const authorizedInterface = new Set(["Ir para o conteúdo", "10+", "dias", "horas", "min", "seg", "Contato", "WhatsApp: +351 964 052 921", "@emportugalconsultoria", "contato@emportugalconsultoria.com.br"]);
 for (const text of blocks) {
   if (!required.has(text) && !authorizedInterface.has(text)) throw new Error(`Texto sem fonte aprovada: ${text}`);
 }
@@ -61,7 +61,7 @@ function orderedIds(texts) {
 }
 const manifest = {
   ...sourceManifest,
-  sourceVersion: "geceli-copy-2026-09-29-visual-feedback-2026-10-01",
+  sourceVersion: "geceli-copy-2026-09-29-footer-email-2026-10-01",
   renderedRoutes: ["/a1", "/a2", "/a3"].map(route => ({ route, blocks: orderedIds(blocks), dynamicIds: ["timer-dias", "timer-horas", "timer-min", "timer-seg"] })),
 };
 manifest.renderedRoutes.push({ route: "/obrigado", blocks: orderedIds([copy.productName, "Sua inscrição foi confirmada.", copy.productName]), dynamicIds: [] });

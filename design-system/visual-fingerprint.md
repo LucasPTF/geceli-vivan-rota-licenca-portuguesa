@@ -8,7 +8,7 @@
 - A3: promessa centralizada em toda a largura; detalhes abaixo e retrato circular compacto. Alternativa mobile em coluna sem herdar altura do texto.
 - Corpo compartilhado: mesma copy, sequência e componentes. Novos CTAs após benefícios, workshop e autoridade, com rótulo literal e destino interno de investimento.
 - Materiais: três fotos reais escolhidas da pasta fornecida. A abertura não repete a foto de autoridade. Nenhuma imagem sintética. WebP com largura 900 e dimensões reservadas.
-- Contato: WhatsApp +351 964 052 921 confirmado no link público do site oficial em 1 de outubro, Instagram e site existentes. Não inventar e-mail.
+- Contato: WhatsApp +351 964 052 921 e Instagram preservados. Por solicitação do usuário, o link do site no rodapé foi substituído por contato@emportugalconsultoria.com.br com destino mailto. E-mail confirmado na página oficial https://emportugalconsultoria.com.br/pos-graduacao-na-europa/ em 1 de outubro. Ícone de envelope e nome acessível correspondentes.
 - Movimento: efeitos existentes preservados, sem novo foco animado. Órbitas mantêm pausa fora da tela e alternativa estática em movimento reduzido.
 - Skills utilizadas: copy-fiel-cliente para texto e repetições; frontend-design para as três composições; ui-ux-pro-max para enquadramento, responsividade e contato acessível.
 - Orçamento de mídia: fotos de abertura abaixo de 120 KB cada; autoridade abaixo de 220 KB, carregamento tardio. Sem novas dependências de interface. Tempos de renderização não medidos nesta revisão localizada.
