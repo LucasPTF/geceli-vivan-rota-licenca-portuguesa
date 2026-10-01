@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowRight, Camera, Check, ChevronDown, CircleCheckBig, ClipboardCheck,
-  Clock3, Compass, Euro, ExternalLink, Globe2, ShieldCheck, Stethoscope, X,
+  Clock3, Compass, Euro, ExternalLink, Globe2, MessageCircle, ShieldCheck, Stethoscope, X,
 } from "lucide-react";
 import { copy, routeManifest, type HeroVariant } from "./content";
 import "./styles.css";
@@ -46,8 +46,10 @@ function CheckList({ items, className = "" }: {
 }
 
 function Hero({ hero }: { hero: HeroVariant }) {
+  const presentation = hero.path === "/a2" ? "light" : hero.path === "/a3" ? "centered" : "split";
+  const portrait = hero.path === "/a3" ? "/geceli-sorriso-casual.webp" : "/geceli-sorriso-blazer.webp";
   return (
-    <header className="hero" id="top">
+    <header className={`hero hero-${presentation}`} id="top">
       <nav className="nav shell" aria-label="Navegação principal">
         <Brand />
         <a className="nav-link" href="#workshop">
@@ -79,7 +81,7 @@ function Hero({ hero }: { hero: HeroVariant }) {
           <div className="document-frame">
             <div className="document-topline"><span>{copy.authority.name}</span><span>{copy.workshop.kicker}</span></div>
             <div className="portrait-wrap">
-              <img src="/geceli-vivan.webp" alt="Geceli Vivan" width="900" height="1200" fetchPriority="high" />
+              <img src={portrait} alt="Geceli Vivan" width="900" height="1200" fetchPriority="high" />
               <div className="portrait-shade" aria-hidden="true" />
             </div>
             <div className="document-stamp" aria-hidden="true"><span>2</span><small>HORAS AO VIVO</small></div>
@@ -146,6 +148,7 @@ function BenefitsSection() {
             );
           })}
         </div>
+        <div className="section-actions centered"><Cta label={copy.hero.cta} /></div>
       </div>
     </section>
   );
@@ -251,6 +254,7 @@ function WorkshopSection() {
         <div data-reveal>
           <p className="eyebrow">{section.kicker}</p><h2 id="workshop-title">{section.title}</h2>
           <Paragraphs items={section.intro} /><CheckList items={section.items} />
+          <div className="section-actions"><Cta label={copy.hero.cta} /></div>
         </div>
         <aside className="result-card" data-reveal>
           <ClipboardCheck aria-hidden="true" size={34} />
@@ -285,7 +289,7 @@ function AuthoritySection() {
     <section className="section section-authority" aria-labelledby="authority-title">
       <div className="shell authority-grid">
         <div className="authority-image" data-reveal>
-          <img src="/geceli-vivan.webp" alt="Geceli Vivan" width="900" height="1200" loading="lazy" />
+          <img src="/geceli-apresentacao.webp" alt="Geceli Vivan" width="900" height="1200" loading="lazy" />
           <div className="authority-badge"><ShieldCheck aria-hidden="true" size={25} /><span>10+</span></div>
         </div>
         <div data-reveal>
@@ -294,6 +298,7 @@ function AuthoritySection() {
           <p className="authority-text">{section.experience}</p>
           <div className="authority-stats">{section.stats.map((stat) => <p key={stat}>{stat}</p>)}</div>
           <p className="authority-text">{section.closing}</p>
+          <div className="section-actions"><Cta label={copy.hero.cta} /></div>
         </div>
       </div>
     </section>
@@ -407,7 +412,7 @@ function Countdown() {
       >
         {units.map((unit) => (
           <div className="countdown-unit" key={unit.label}>
-            <strong>{String(unit.value).padStart(2, "0")}</strong>
+            <strong data-copy-dynamic={`timer-${unit.label}`}>{String(unit.value).padStart(2, "0")}</strong>
             <span>{unit.label}</span>
           </div>
         ))}
@@ -459,14 +464,18 @@ function Footer() {
     <footer className="footer">
       <div className="shell footer-inner">
         <Brand />
-        <div className="footer-links">
+        <div className="footer-contact">
+          <h2>Contato</h2>
+          <a href="https://wa.me/351964052921" target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" size={20} /><span>WhatsApp: +351 964 052 921</span>
+          </a>
           <a
             href="https://www.instagram.com/emportugalconsultoria/"
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram da Em Portugal Consultoria"
           >
-            <Camera aria-hidden="true" size={20} />
+            <Camera aria-hidden="true" size={20} /><span>@emportugalconsultoria</span>
           </a>
           <a
             href="https://emportugalconsultoria.com.br/"
@@ -474,7 +483,7 @@ function Footer() {
             rel="noreferrer"
             aria-label="Site da Em Portugal Consultoria"
           >
-            <ExternalLink aria-hidden="true" size={20} />
+            <ExternalLink aria-hidden="true" size={20} /><span>emportugalconsultoria.com.br</span>
           </a>
         </div>
       </div>
@@ -482,10 +491,34 @@ function Footer() {
   );
 }
 
+function copyTextId(text: string) {
+  let hash = 2166136261;
+  for (const character of text.replace(/\s+/g, " ").trim()) {
+    hash = Math.imul(hash ^ character.charCodeAt(0), 16777619) >>> 0;
+  }
+  return `text-${hash.toString(16)}`;
+}
+
+function CopyRoot({ children }: { children: React.ReactNode }) {
+  const root = React.useRef<HTMLDivElement>(null);
+  React.useLayoutEffect(() => {
+    const occurrences = new Map<string, number>();
+    root.current?.querySelectorAll<HTMLElement>("p,h1,h2,h3,span,strong,small,a,summary,li").forEach((element) => {
+      if (element.closest('[aria-hidden="true"]') || element.hasAttribute("data-copy-dynamic")) return;
+      const hasOwnText = Array.from(element.childNodes).some((node) => node.nodeType === Node.TEXT_NODE && node.textContent?.trim());
+      if (!hasOwnText) return;
+      const key = copyTextId(element.textContent || "");
+      const occurrence = (occurrences.get(key) || 0) + 1;
+      occurrences.set(key, occurrence);
+      element.dataset.copyId = `${key}-${occurrence}`;
+    });
+  }, []);
+  return <div ref={root} data-copy-root>{children}</div>;
+}
 
 function SalesPage({ hero }: { hero: HeroVariant }) {
   return (
-    <>
+    <CopyRoot>
       <a className="skip-link" href="#main-content">Ir para o conteúdo</a>
       <Hero hero={hero} />
       <main id="main-content">
@@ -505,13 +538,13 @@ function SalesPage({ hero }: { hero: HeroVariant }) {
         <FinalSection />
       </main>
       <Footer />
-    </>
+    </CopyRoot>
   );
 }
 
 function ThankYouPage() {
   return (
-    <main className="thanks-page">
+    <CopyRoot><main className="thanks-page">
       <div className="thanks-card">
         <Brand />
         <CircleCheckBig aria-hidden="true" size={48} />
@@ -522,7 +555,7 @@ function ThankYouPage() {
           {copy.productName}
         </a>
       </div>
-    </main>
+    </main></CopyRoot>
   );
 }
 
