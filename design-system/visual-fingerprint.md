@@ -4,7 +4,7 @@
 - Público e oferta: workshop ao vivo para médicos brasileiros, promessa de ampliar possibilidades profissionais e ganhar em euros morando no Brasil. Não apresentar mecanismos ou etapas técnicas.
 - Identidade preservada: azul-marinho #011a3a, azul #0d526f, fundo #f8f8f8, dourado #c59d5f. Fraunces nos títulos e Manrope no corpo.
 - A1: abertura dividida, texto à esquerda, retrato de blazer sorridente à direita, composição existente preservada.
-- A2: abertura clara, retrato à esquerda, texto à direita. Logo em base escura para manter contraste. Ordem textual no DOM igual à A1.
+- A2: abertura clara, retrato à esquerda, texto à direita. Logo original transparente diretamente sobre o fundo claro, sem moldura azul, conforme solicitação do usuário em 1 de outubro. Ordem textual no DOM igual à A1.
 - A3: promessa centralizada em toda a largura; detalhes abaixo e retrato circular compacto. Alternativa mobile em coluna sem herdar altura do texto.
 - Corpo compartilhado: mesma copy, sequência e componentes. Novos CTAs após benefícios, workshop e autoridade, com rótulo literal e destino interno de investimento.
 - Materiais: três fotos reais escolhidas da pasta fornecida. A abertura não repete a foto de autoridade. Nenhuma imagem sintética. WebP com largura 900 e dimensões reservadas.

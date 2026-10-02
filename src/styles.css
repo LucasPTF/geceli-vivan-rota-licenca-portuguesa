@@ -400,12 +400,6 @@ h3 {
   border-color: var(--border);
 }
 
-.hero-light .brand {
-  padding: 10px 16px;
-  border-radius: 14px;
-  background: var(--atlantic-deep);
-}
-
 .hero-light .nav-link,
 .hero-light .hero-angle,
 .hero-light .hero-opening,
