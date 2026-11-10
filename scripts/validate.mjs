@@ -22,7 +22,7 @@ if (/reconhecimento|inscrição profissional|telemedicina|Ordem dos Médicos|\bN
 if (/transition\s*:\s*all/i.test(css)) failures.push("CSS usa transition: all");
 if (!css.includes("prefers-reduced-motion")) failures.push("Movimento reduzido ausente");
 if (!app.includes('href="#investimento"')) failures.push("Destino interno dos CTAs ausente");
-if (Date.parse(workshopEvent.startsAt) !== Date.UTC(2026, 10, 23, 22) ||
+if (Date.parse(workshopEvent.startsAt) !== Date.UTC(2026, 10, 24, 22, 20) ||
     !app.includes("Date.parse(workshopEvent.startsAt)")) {
   failures.push("Cronômetro sem a data oficial do workshop");
 }

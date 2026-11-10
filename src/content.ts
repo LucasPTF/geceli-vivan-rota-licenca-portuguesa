@@ -301,7 +301,7 @@ export const copy = {
     "cta": "QUERO DESCOBRIR COMO →"
   },
   "countdownLabel": "O WORKSHOP COMEÇA EM",
-  "countdownNote": "23/11/2026 às 19h (horário de Brasília)",
+  "countdownNote": "24/11/2026 às 19h20 (horário de Brasília)",
   "lots": [
     {
       "name": "Lote 1",
