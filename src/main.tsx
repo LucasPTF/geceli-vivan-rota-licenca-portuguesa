@@ -5,6 +5,7 @@ import {
   Clock3, Compass, Euro, Globe2, Mail, MessageCircle, ShieldCheck, Stethoscope, X,
 } from "lucide-react";
 import { copy, routeManifest, type HeroVariant } from "./content";
+import { workshopEvent } from "./event";
 import "./styles.css";
 
 const benefitIcons = [Euro, Clock3, Globe2, Compass];
@@ -72,6 +73,7 @@ function Hero({ hero }: { hero: HeroVariant }) {
             <div><strong>{hero.highlightTitle}</strong><span>{hero.highlightText}</span></div>
           </div>
           <div className="hero-support hero-enter hero-enter-4">
+            <p>{workshopEvent.schedule}</p>
             <p>{hero.information}</p>
             <strong className="hero-price">{hero.price}</strong>
           </div>
@@ -289,7 +291,7 @@ function AuthoritySection() {
     <section className="section section-authority" aria-labelledby="authority-title">
       <div className="shell authority-grid">
         <div className="authority-image" data-reveal>
-          <img src="/geceli-apresentacao.webp" alt="Geceli Vivan" width="900" height="1200" loading="lazy" />
+          <img src="/geceli-apresentacao-blazer-preto.webp" alt="Geceli Vivan" width="945" height="1260" loading="lazy" />
           <div className="authority-badge"><ShieldCheck aria-hidden="true" size={25} /><span>10+</span></div>
         </div>
         <div data-reveal>
@@ -338,6 +340,7 @@ function OfferSection() {
         <aside className="price-panel" data-reveal>
           <p className="price-label">{section.investmentLabel}</p>
           <p className="price-value">{section.investmentValue}</p>
+          <p>{workshopEvent.schedule}</p>
           <Cta label={section.cta} className="cta-light" />
         </aside>
       </div>
@@ -353,30 +356,14 @@ function OfferSection() {
   );
 }
 
-const countdownStorageKey = "geceli-rota-licenca-portuguesa-expiry-v1";
-const countdownDuration = 4 * 24 * 60 * 60 * 1000;
-
-function getCountdownExpiry() {
-  try {
-    const stored = window.localStorage.getItem(countdownStorageKey);
-    const parsed = stored ? Number(stored) : Number.NaN;
-
-    if (Number.isFinite(parsed)) return parsed;
-
-    const expiry = Date.now() + countdownDuration;
-    window.localStorage.setItem(countdownStorageKey, String(expiry));
-    return expiry;
-  } catch {
-    return Date.now() + countdownDuration;
-  }
-}
+const countdownExpiry = Date.parse(workshopEvent.startsAt);
 
 function getRemainingTime(expiry: number) {
   return Math.max(0, expiry - Date.now());
 }
 
 function Countdown() {
-  const [expiry] = React.useState(getCountdownExpiry);
+  const expiry = countdownExpiry;
   const [remaining, setRemaining] = React.useState(() => getRemainingTime(expiry));
 
   React.useEffect(() => {
@@ -453,6 +440,7 @@ function FinalSection() {
         <p className="final-promise">{section.promise.map((line) => <span key={line}>{line}</span>)}</p>
         <span>{section.information}</span>
         <strong className="final-price">{section.price}</strong>
+        <p>{workshopEvent.schedule}</p>
         <Cta label={section.cta} className="cta-light" />
       </div>
     </section>

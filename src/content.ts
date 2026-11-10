@@ -300,8 +300,8 @@ export const copy = {
     "price": "R$ 97",
     "cta": "QUERO DESCOBRIR COMO →"
   },
-  "countdownLabel": "CONDIÇÃO ATUAL DISPONÍVEL POR",
-  "countdownNote": "O prazo começou no seu primeiro acesso a esta página.",
+  "countdownLabel": "O WORKSHOP COMEÇA EM",
+  "countdownNote": "23/11/2026 às 19h (horário de Brasília)",
   "lots": [
     {
       "name": "Lote 1",

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { workshopEvent } from "../src/event.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
 const source = fs.readFileSync(path.join(root, "src", "content.ts"), "utf8");
@@ -21,7 +22,10 @@ if (/reconhecimento|inscrição profissional|telemedicina|Ordem dos Médicos|\bN
 if (/transition\s*:\s*all/i.test(css)) failures.push("CSS usa transition: all");
 if (!css.includes("prefers-reduced-motion")) failures.push("Movimento reduzido ausente");
 if (!app.includes('href="#investimento"')) failures.push("Destino interno dos CTAs ausente");
-if (!app.includes("countdownStorageKey") || !app.includes("window.localStorage")) failures.push("Persistência do cronômetro ausente");
+if (Date.parse(workshopEvent.startsAt) !== Date.UTC(2026, 10, 23, 22) ||
+    !app.includes("Date.parse(workshopEvent.startsAt)")) {
+  failures.push("Cronômetro sem a data oficial do workshop");
+}
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
