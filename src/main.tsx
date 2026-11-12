@@ -12,7 +12,7 @@ const benefitIcons = [Euro, Clock3, Globe2, Compass];
 
 function Cta({ label, className = "" }: { label: string; className?: string }) {
   return (
-    <a className={`cta ${className}`} href="#investimento">
+    <a className={`cta ${className}`} href={workshopEvent.checkoutUrls[0]}>
       <span>{label}</span>
     </a>
   );
@@ -346,11 +346,19 @@ function OfferSection() {
       </div>
       <Countdown />
       <div className="shell lots" data-reveal aria-label="Lotes do workshop">
-        {copy.lots.map((lot, index) => (
-          <article className={`lot-card ${index === 0 ? "lot-current" : ""}`} key={lot.name}>
-            <p>{lot.state}</p><h3>{lot.name}</h3><strong>{lot.value}</strong>
-          </article>
-        ))}
+        {copy.lots.map((lot, index) => {
+          const LotCard = index === 0 ? "a" : "article";
+          return (
+            <LotCard
+              className={`lot-card ${index === 0 ? "lot-current" : ""}`}
+              href={index === 0 ? workshopEvent.checkoutUrls[0] : undefined}
+              aria-label={`${lot.name}, ${lot.value}`}
+              key={lot.name}
+            >
+              <p>{lot.state}</p><h3>{lot.name}</h3><strong>{lot.value}</strong>
+            </LotCard>
+          );
+        })}
       </div>
     </section>
   );
